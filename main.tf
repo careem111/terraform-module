@@ -23,13 +23,13 @@ data "aws_vpc" "default" {
 }
 
 
-data "aws_subnet_ids" "default" {
+data "aws_subnet" "default" {
     vpc_id = data.aws_vpc.default.id
 
 }
 
 resource "aws_launch_configuration" "example" {
-    image_id    = "ami-0283a57753b18025b"
+    image_id    = "ami-0574da719dca65348"
     instance_type = var.instance_type
     key_name = var.keyname
     security_groups = [aws_security_group.instance.id]
